@@ -10,6 +10,7 @@ JS_LANGUAGE = Language(so, "javascript")
 PY_LANGUAGE = Language(so, "python")
 CPP_LANGUAGE = Language(so, "cpp")
 C_LANGUAGE = Language(so, "c")
+SQL_LANGUAGE = Language(so, "sql")
 
 
 class Lang(str, Enum):
@@ -18,6 +19,7 @@ class Lang(str, Enum):
     js = "js"
     cpp = "cpp"
     c = "c"
+    sql = "sql"
 
     def get_lib(self):
         if self == Lang.py:
@@ -30,3 +32,5 @@ class Lang(str, Enum):
             return CPP_LANGUAGE
         elif self == Lang.c:
             return C_LANGUAGE
+        elif self == Lang.sql:
+            return SQL_LANGUAGE

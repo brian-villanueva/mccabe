@@ -8,6 +8,7 @@ Language.build_library(
         "vendor/tree-sitter-python",
         "vendor/tree-sitter-cpp",
         "vendor/tree-sitter-c",
+        "vendor/tree-sitter-sql"
     ],
 )
 

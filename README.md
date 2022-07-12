@@ -14,6 +14,7 @@ Current supported languages:
 - [Python](https://github.com/tree-sitter/tree-sitter-python)
 - [C++](https://github.com/tree-sitter/tree-sitter-cpp)
 - [C](https://github.com/tree-sitter/tree-sitter-c)
+- [SQL](https://github.com/DerekStride/tree-sitter-sql)
 
 ## Installation
 

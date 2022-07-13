@@ -104,7 +104,7 @@ print(ret)
 First, you need to clone the repo.
 
 ```shell
-git clone https://github.com/long2ice/mccabe.git
+git clone https://github.com/brian-villanueva/mccabe.git
 ```
 
 ### Install deps
@@ -112,6 +112,9 @@ git clone https://github.com/long2ice/mccabe.git
 Then install the requirements.
 
 ```shell
+# first you may need to install poetry: https://python-poetry.org/docs/
+pip install -U poetry
+
 make deps
 ```
 

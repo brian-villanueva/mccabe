@@ -21,7 +21,7 @@ Current supported languages:
 The tool is not published to Pypi, you can install it directly from source code.
 
 ```shell
-pip install git+https://github.com/long2ice/mccabe.git
+pip install git+https://github.com/brian-villanueva/mccabe.git
 ```
 
 ## Usage

@@ -1,5 +1,7 @@
 *.iml
 .idea
+sql-data/*.csv
+sql-data/input/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

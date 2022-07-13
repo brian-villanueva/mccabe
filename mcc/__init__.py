@@ -12,6 +12,7 @@ from mcc.providers.js import MccabeJS  # noqa:F401
 from mcc.providers.python import MccabePy  # noqa:F401
 from mcc.providers.c import MccabeC  # noqa:F401
 from mcc.providers.cpp import MccabeCPP  # noqa:F401
+from mcc.providers.sql import MccabeSQL  # noqa:F401
 
 
 @lru_cache()

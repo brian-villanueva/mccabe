@@ -2,7 +2,7 @@ from mcc.languages import Lang
 from mcc.providers import Mccabe
 
 
-class MccabePy(Mccabe):
+class MccabeSQL(Mccabe):
     suffixes = (".sql",)
     language = Lang.sql
     judge_nodes = [

@@ -1,20 +1,24 @@
 ### Converting Snowflake CSV files to SQL files
 
+#### Generating SQL files
+
+To generate SQL files from a Snowflake CSV file, 
+run this command from inside the sql-data directory:
 ```shell
-# handle multi-line statements which are separated by "\"
-cat data_0_0_0.csv | sed -e :a -e '/\\$/N; s/\\\n//; ta' | tr -s ' ' > file-scrubbed.csv
-
-# remove trailing values delimited by pipe ("|") so that we only have SQL statements
-cat file-scrubbed.csv | sed 's/\|.*$//g' > file-trimmed.csv
-
-# convert resulting file to individual .sql files, named as "statement[0-N].sql"
-csv-to-sql-files.sh file-trimmed.csv
+./csv-to-sql-files.sh data_0_0_0.csv 35
 ```
+There are two arguments that are passed to the script:
+* CSV filename
+* Maximum number of statements to export (optional).  Default: **30**
 
+#### Analyzing SQL files
 Once the `input` directory is populated with data, you can run `mcc` from the project 
 root directory like this:
+```shell
+mcc -l sql -d sql-data/input
+```
+It will produce output like this:
 ```text
-mcc -l sql -d sql-data/input    
 {
     "sql-data/input/statement2.sql": 0,
     "sql-data/input/statement3.sql": 5,

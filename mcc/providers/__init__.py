@@ -17,18 +17,20 @@ class Mccabe:
         self,
         directory: Optional[str] = None,
         file: Optional[str] = None,
+        code: Optional[str] = None,
     ):
         """
         The order of param is source > file > directory
         :param directory: The source language
         :param file: The source code file
         """
-        if not any([directory, file]):
+        if not any([directory, file, code]):
             raise ParamMissingException(
                 "You must specify a source code file or directory or raw source code"
             )
         self.directory = directory
         self.file = file
+        self.code = code
 
     def _source_codes(self):
         if self.file:
@@ -42,6 +44,8 @@ class Mccabe:
                     path = os.path.join(root, file)
                     with open(path) as f:
                         yield path, f.read()
+        elif self.code:
+            yield "code",self.code
 
     def _visit_node(self, node: Node):
         count = 0
